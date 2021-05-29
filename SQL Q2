@@ -1,0 +1,7 @@
+Create table Events(
+user_id int unsigned default'0000'not null,
+event_date_time int unsigned default '0000'null);
+Insert into Events Values (7494212,1535308430), (7494212,1535308433), (1475185,1535308444),
+(6946725,1535308475), (6946725,1535308476), (6946725,1535308477);
+Select count(distinct user_id) from Events
+where user_id between 10000 and 20000;
