@@ -1,0 +1,25 @@
+CREATE TABLE Shops(
+shop_name  CHAR(20)      DEFAULT ''     NOT NULL,
+    item_name char(30)   DEFAULT '' NOT NULL);
+INSERT INTO Shops VALUES ('name_1','item_1'),('name_2','item_1'),('name_3','item_1'),('name_4','item_1'),
+    ('name_5','item_1'),('name_6','item_2'),('name_7','item_2'),('name_8','item_2'),
+    ('name_9','item_2'),('name_10','item_2'),('name_11','item_2'),('name_1','item_3'),
+    ('name_2','item_3'),('name_3','item_3'),('name_4','item_3'),('name_5','item_3'),
+    ('name_6','item_3'),('name_7','item_3'),('name_8','item_3'),('name_9','item_3'),
+    ('name_10','item_4'),('name_11','item_5');
+
+/* Display all the records from the table */
+/* SELECT * FROM Shops;*/
+Select shop_name,item_name, count(*)
+from Shops
+group by shop_name;
+Create Table Items(
+item_name char(30) default'' not null,
+sold_amount int unsigned default'0000' not null);
+Insert into Items Values ('item_1',46), ('item_2',52),('item_3',232),('item_4',478),('item_5',69),('item_6',53),('item_7',4),('item_8',37),('item_9',227),('item_10',222),('item_11',77),('item_12',36),('item_13',87),('item_14',69),('item_15',64),('item_16',35),('item_17',45),('item_18',27),('item_19',83),('item_20',35),('item_21',564),('item_1',54);
+/*Display all records from the table*/
+/*Select * from Items;*/
+
+Select
+sum(sold_amount) 'grand_total' from Items
+order by grand_total desc;
